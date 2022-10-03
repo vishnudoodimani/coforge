@@ -1,0 +1,405 @@
+abstract classes and methods
+a method which does not contain any body or implementation is called abstract method
+syntax---
+public abstract void m();
+public abstract double area();
+
+any class which contains abstract method that class can be declared as abstract class
+
+Another ways to create string;
+1.using string constructor
+2.using literal technique
+
+why strings are immutable?
+if 5 reference variables refers to same string object
+if any one reference variable changes that string it effects to all reference variables
+
+uppercase alphabets – 65 to 90. ASCII value of lowercase alphabets – 97 to 122.
+
+StringBuffer class
+used to create a mutable string
+(Mutable means u can add/delete/append/replace characters)
+it is synchronized. Means it is thread safe ie,. multiple threads cannot access the StirngBuffer method concurrently
+It is slow
+
+StringBuilder class
+used to create a mutable string
+its is not sychrnozed. Means it is not thread safe ie. multiple threads can access the StringBuilder method
+concurrent
+It is Fast
+
+Exception handling---
+Exception is an abnormal condition occured in code sequence at run time
+if the occured exception is not handled then the program will terminate abnormally and we can maintain the smooth flow of an application
+thus the process of handling exception is called "exception handling" and achieved through try catch throws and
+finally key words
+
+
+types of exceptions
+1.Checked exception these will occur at compile time compiler is going to chech such 
+
+throw key word---
+When u want to throw exception manually we use throw key word
+syntax
+throw throwable object;
+throws
+
+finally----
+is block of code which always executes weather exception occured or not occured.
+it is always executes after the try catch block
+
+assigments
+1.write program to illustrate that try catch can be written in finally
+2.
+
+multi threading----------
+when u open word ducument one time and u fomating at the same time 
+u give for printing the multi process happend is called as multi threading
+
+life cycle of thread
+1.new
+2.runnable
+3.running
+4.non runnable
+5.dead
+
+how to create thread
+thread is a class present in java.lang.*pkg
+consturctor
+Thread()
+Thread(Runnable r)
+Thread(String s)
+Thread(Runnable r, String s)
+here Runnable is an Interface present in java.lang pkg
+
+
+2 ways to create a Thread
+1.exteding thread class
+2.Implementing Runnable Interface
+
+
+Methods of Thread class
+void start()
+void run()
+static void sleep(int millisec) throws InteruptedException
+void join() throws InterruptedException
+void interrupt()
+boolean isAlive()
+static Thread currentThread()
+String getId()
+String getName()
+void setPrioriy(int priority)
+long getPrioriy()
+
+start sleep
+write a program to control the main thread and change its name and priority
+*synchronization-is the capability to control the access of multiple threads to any shared resource.
+*deadlock-
+*wrappper class-is a class that encapsulated types,so that those types can be used to create object instances and
+methods in another class that need those types
+*collections-it presents in java.util.*pkg;
+used to perform operation on collections package
+*Arraylist-
+*custom user defined classes-
+*hashset-
+*hashcode method-
+syntax
+int hashcode()
+it is a method of object class specifies the hash code of onject it is integer value u cannot specify has code for
+primitive type
+
+*linked hashset contructor
+LinkedHashSet()
+LinkedHashSet(Collection c)
+LinkedHashSet(int size)
+
+*comparator-- used to compare one more than 1 data member of a user class object stored in collection
+it has a method called in compare(Object o1, Object o2)
+return 0 if o1==o2
+returns -1 if o1>o2
+else
+return -1
+#create a class called office with name, city, noofempp and store 5 objects in LinkedList and sort on name and no  
+of emps
+
+Map-it is used to store key value pair key must be occur at left side key must be unique
+
+2. interface 
+map interface implemented by HashMap and LinkedHashMap classes
+
+Sortedmap----
+interface implemented by TreeMap
+
+
+Map interface methods
+Map put(Object key, Object value)
+Map putAll(Map m)
+boolean containskey(Object key)
+Object get(Object value)
+Set keySet()
+Set entrySet()
+
+13/9/2022
+
+jdk 1.8 features---
+1.Functional interface
+2.Lamda expressions
+3.Optional class
+4.Collectors class
+5.Stream API
+6.Method references
+
+
+functional interface---
+it contains only one abstract method
+it also contains concrete method of default access specifier
+it is created by using
+
+lambda function----
+used to provide a n implementation with out specifying method name
+synatax
+() - > implementation
+
+left side represents parameters 
+right side represent body
+(int i)-> {
+return i;
+}
+(int a, int b)->{
+System.out.println(a+b);}
+
+UnaryOperator
+It is a functional interface takes 2 arguments and return another argument and return another argument of smame type
+
+***what is null pointer exception
+
+*stream api
+
+*Collection / Map methods
+
+Adavaned java
+jdbc
+hibernate
+jpa
+spring
+springboot
+
+JDBC--it is an API makes java application to talk with database
+its is present in java.sql.* package
+driver
+It is s/w component converts java calls to data base calls
+there are 4 types of drivers 
+type 1 driver:
+it is also called jdbc odbc bridge driver here the jdbc calls passes through separate component odbc bridge.
+It creates lots of overhead  it is coded in c it is not platform independent i
+it has to be installed into computer
+slow used for production purpose 
+
+
+
+jdbc API
+   |
+   |
+Java Application-----JDBC-ODBC--------ODBC Driver------vendor databse library----- - - - - -Database
+		   bridge driver
+                                  
+                                 (fig -jdbc odbc bridge)
+
+
+
+type 2 driver-\
+type 3 driver-\
+
+
+
+jdbc
+  |
+  |
+java
+application-----jdbc driver------database
+
+
+type 4 driver
+it is also calls directly converted to database calls 
+it is very fast
+it is coded in purely in java it is platform independent not to be installed into computer
+fast used for development purpose.
+but it is database dependent
+
+
+
+jdbc api
+   |
+   |
+java application-------Thin driver--- - -- - Database
+                  Clientmachine
+              
+                (Fig: Thin Driver)
+
+
+JDBC uses 2 packages
+1.java.sql.*
+it has following classes 
+DriverManager the driver
+method 
+public static connection getConnection(String url, String username, String password) obtains connection
+
+Connection interface used to obtain the connection is session between application and database methods
+statement createstatement() creates sql statement preparedStatement(String s)
+create parameterized SQL statements
+callable statement prepareCall(String s)
+calls stored procedure
+statement addBatch(String s)
+creates statemnts in batch
+void commit()
+void close()
+void rollback()
+
+JDBC program to test connection with mysql database
+
+Statement interface
+used to create SQL statements
+methods
+int executeUpdate(String s) executes DML statements
+boolean execute(String s) executes DML DDL statements
+resulSet executeQuery(String s)
+executes DQL statements
+int[] execute
+
+insert id name and age into newyork table
+write a program to insert/delete/update 1 row into database
+#connections in java sql
+
+PreparedStatements uses place makers in their query In this technique PreparedStatement uses? as place markers If
+developer wants to execute SQL statements 100 time then database enginee optimizes/parses the sql statement only 1
+time and exevutes it layer java replaces?
+by values. this imporves the performance of databse engine syntax
+
+
+MAVEN BUILD TOOL--
+current version is 4.0
+it is a build tool
+used to create project structure
+used to download depedencies from maven website
+used to create jar war files
+
+MAVEN GOLAS--
+mvn compile used to compile the source code
+mvn package used to generate jar file
+mvn install used to install package
+mvn clean used to clean target directory
+
+MAVEN PLUGIN--
+used to execute maven goals
+
+
+CREATING MAVEN PROJECT--
+u must install eclipse IDE for ee developers install latest version like mar 200 sep 2021 e.t.c
+
+then keep the perspective pointer to java EE
+then Goto file menu
+select new
+u see maven project plugin
+
+when u create a maven project u will get one file called pom.xml
+this file contains plug in info/dependency info e.t.c
+When u create maven project 1st time in ur home directory like c:/users/dell
+maven creates local repository called.m2
+in this all plugin jars are stored 
+if already dependincies are not present in .m2
+then maven connects to it's website it is called remote repository
+
+note: to create maven project u must have sound internet connection
+
+org.apache.maven type in search box
+
+
+HIBERNATE 5.3-------
+It is a frame wrk
+It is called ORM framework
+(Object Relational Mapping) means java objects are mapped to database table invented by Gavin kinng
+*session interface
+*transaction inter
+*session factor interface
+
+Features--
+no need to write a code to handle transaction/exception/ope/close the connection
+it is pure ORM 
+slow compared to JDBC
+created table automatically
+generates the query
+generates the primary key value automatically
+supports inheritance association mapping like 1:1 1:m m:m m:1
+supports 2 level cache to improve performance 
+supports HQL(Hibernate query language)
+supports all functions like order by group by aggregate function etc
+connect to multiple databases
+
+Session opensession()
+creates th reference for session
+Session it is also an interface it is a 2nd level cache used to perform data acccess
+operation in this u create transcation reference
+
+Transaction beginTransaction()
+void save(Object o) insert into database
+void persist(Object o) inserts into database
+
+Transaction it is also an interface used to perform committing rollbacking e.t.c
+void commit()
+all above interfaces are present in org.hibernate.*pkg
+
+class confuguration
+costructor 
+confuguration()
+method
+void configure(String file)
+loads the configuration file
+
+This class is present in org.hibernate.cfg.*pkg
+3 important properties of hibernate 
+hibernate.hdm2ddl.auto
+*it creates the table automatically
+it has 3 values
+create a new table when every time u run the program
+create-drop
+creates and drops table when every time u run the program 
+update
+creates new table when 1st time u run the program
+*Hibarnate.dialect
+it connects to the multiple databses to connect Mysql dialect value is org.hinernate.dialect.Mysql5Dialect
+*Show_sql
+it has value called true/false
+tells to hibernate that wether to display query/not
+
+How to generate primary key in hibernate?
+using<generator class=""/> we generate primary key value in hibernate.hbm.xml file
+
+following are classes used to generate primary key value
+1.assigned it is default here hibernate does not generates primary key value developer has to enter the pk value
+2.increment her hibernate generates pk value
+3.swquence here hibernate generates pk value
+
+lib>reqfolder>properties>javabuildpath>lib>add externaljars>cntrl a>mysqlconnector>paste in extracted file>
+
+source>file>book.hpm.xml
+
+tp select all columsns
+sql- select * from Emp;
+HQL- from Emp;hee Emp is class name
+select name, age from Emp where name, age, are columns Emp is a table
+
+select Name, Age from Emp where name, age are FIELD NAMES Emp is a Class
+
+emp is a class
+hot to create hql query
+query c=session.createquery(String query)
+where query is interface
+
+
+
+
+
+
+
+	
+

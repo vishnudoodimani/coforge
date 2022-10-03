@@ -1,0 +1,171 @@
+Spring Frame Work
+spring core
+spring mvc
+spring rest module
+spring boot
+spring boot console application
+spring boot data jpa module
+spring boot mvc
+spring boot rest application
+spring boot cloud micro services
+
+
+
+
+spring frame work?
+spring is developed by rodd john son in 2002
+it is also called frame work of frame work
+i.e, u can integrate spring with hibernate,struts, as well as JUNIT mocktile etc
+spring is also used for dependency injection?
+
+
+
+what is dependancy injection
+part of the code is saperated from the program and kept in a saperate file is called dependancy.
+
+
+
+saperated code is called dependancy.
+eg;;
+Suppose if u want to write a program to display the name age and city of a person 
+if u write presentation logic, bisiness logic as well data access logic in one file
+It is not a dependency injection
+it is called "Tightly coupled code"
+
+if u w
+rite presentation logic, business logic as well data access logic in saperate file 
+It is called a dependecy injection
+it is called "Loosely coupled code"
+
+Advantage of spring frame work
+1.predefined template: Spring supports classes like jdbcTemplate to connect to the database
+2.Dependency injection u can write a spring program in a such way that part of the dependecy is saperated from
+program and kept in another file
+3.loose coupling
+4.easy to test
+5.Interaction with different modules like jpa jta js jdbc mvc web rest etc
+6.declarative approach
+mean u can use xml file also to write the program if u use java approach to write the protam it is called
+declarative approach
+If u use java approach to write the program it is called programmatic approach(annotations)
+
+Types containing in speing
+Since spring uses dependency injection so first business logic is executed then the spring container creates the
+object that is why spring is also called IOC container inversion of control container
+
+2Types
+1.Bean Factory used to initialize configure instantiate and assemble the bean
+it is present in  org.springframework.beans.factory.*package
+
+Syntax
+Resource r=new ClassPathResource(String xml)
+BeanFactory b=new XmlBeanFactory(r)
+methods--
+Object getBean(String s)
+Object getBean(Class C)
+Instatiates the Bean
+
+Features--
+doea not supports annotation
+does not supports integration with 
+ApplicationContext--
+used to initialize cofigure institate and assemble
+
+
+Types of dependency injection---
+2Types-
+setter injection-in this business logic for spring is executed by setter methods 
+constructor injection-in this business logic for spring is executed by consturctors
+
+steps to write 1 spring program
+1.create a POJO class using setter/constructor injection
+2.create xml FILE to achieve dependency injection for setter method we use <property> tag
+3.write a main program where spring IOC container instatiates the bean
+
+
+Spring 5.3 annotations
+jsr annotations
+@Autowired
+@qualifier
+@Bean
+@Configuration
+@Scope
+
+Stereo type annotation
+@Component
+@Service
+@Repository
+@Controller
+
+
+
+@Autowired annotation
+it is method/field/constructor level annotation used to collaborate the beans
+ele
+Autowiring has 4 types
+1.byName--- in this id of one bean must be same as property oof another bean
+2.byType inthis one bean collaborates with another bean by their type by using setter injection
+3.constructor same as by type but constructors are used
+
+Note: in byType/constructor autowiring if more than 1 instance of same bean exists container returns error
+
+to use annotatio import context name space in xml file an add <context:component-scan/> tag
+u must use ApplicationContext IOC inversion of control container
+
+class Department
+{
+	String name;
+	String city;
+}
+Department dept;
+}
+Here Emp depends on Dept
+
+
+
+using @Autowired achieve DI
+o/p Govind is a engineer working in IT department at Goa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

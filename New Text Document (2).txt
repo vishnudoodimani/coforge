@@ -1,0 +1,114 @@
+*java provides 8 primitive data types
+
+name      width          range         		default value
+
+byte	 1 byte		-128 TO 127		0
+short	 2 byte		-32768 to 32767 	0
+int 	 4 byte		-214 crore to 214 cr	0
+
+long	 8		very very large 0L
+float	 4		single precision point  0.0f
+doublt   8		double pp		0.0
+char	 2		0 to 65535
+			128 to 255 latin
+boolean 1bit		true/false		false
+
+*type casting
+
+2 types-- 1.implicit type casting
+ex: 
+int a=10;
+long l=a;
+ex;
+int a=10;
+byte b=a; #it raises error
+ex;
+byte b=(byte)a; //explicit type casting
+
+*to find letter for ascii values
+System.out.println((char)100);  #d
+System.out.println((int)'d');   #100
+
+float c=868.868f;
+int i2=(int)c;
+System.out.println(i2);
+int i3=68;
+float c=i3;
+System.out.println(c)
+
+*operators
+arithmetic operators. + - / * += /= *= -= %
+bit wise logical operators.  operations are performed on bits 0 & 1s and & origin + XOR ^ NOT ! leftshift>> right shift >>
+relational/comparision operators.    < > <= >=
+boolean logical operators.
+ternary operators. ?;
+short circuite and or operators  && ||
+
+
+package praveen;
+public clas two{
+public static void main(String[] args){
+int a=3
+int b=1
+int c=4
+System.out.println((a<b)||(a++>c))
+System.out.println((a<b)&&(a++>c))}
+}
+
+
+
+*To read a data from key board
+java provides a scanner class present in java.util.*pkg
+
+constructor
+scanner(InputStream in)
+
+methods
+int nextInt() reads the Integer
+float nextFloat()
+double nextDouble()
+String next()
+String nextLine reads the string with space
+
+*Access modifiers----
+
+Access modifier        withinclass  withinpackage	outside package by subclass only	outsidepackage
+
+private			Y		N			N					N
+Default			y		y			n					n
+protected		y		y			y					n
+public			y		y			y					y
+
+Packages:
+It is a group of classes and interfaces
+partitioning of class name into managable chunks is called packages	
+package is a container for classes and interfaces
+
+2types of packages--
+user defined and built in packages
+
+example of built in packages--   
+java     package
+lang(System.class)(String.class),util(ArrayList.class)(Map.class),awt(Button.class)   Subpackage of java and classes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
